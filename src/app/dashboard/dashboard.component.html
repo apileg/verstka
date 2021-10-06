@@ -1,0 +1,45 @@
+
+<div class="dashboard-wrapper">
+  <div class="header">
+    <h1>{{'dashboard' | uppercase}}</h1>
+  </div>
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link
+       *ngFor="let link of navLinks"
+       [routerLink]="link.link"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive">
+      {{link.label}}
+    </a>
+  </nav>
+  <div class="main-wrapper">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<!--  <mat-toolbar color="primary" class="toolbar">-->
+<!--  <h1>Menu</h1>-->
+<!--</mat-toolbar>-->
+<!--<mat-sidenav-container class="container" autosize>-->
+
+<!--  <mat-sidenav class="sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">-->
+
+<!--    <mat-nav-list>-->
+<!--      <mat-list-item class="parent">-->
+<!--        &lt;!&ndash; Чтобы показывалось при наведении isExpanded || isShowing &ndash;&gt;-->
+<!--        <span class="full-width" *ngIf="isExpanded || isShowing" (click)="dashboard()">Home</span>-->
+<!--        <mat-icon mat-list-icon>home</mat-icon>-->
+<!--      </mat-list-item>-->
+<!--    </mat-nav-list>-->
+
+<!--    <mat-nav-list>-->
+<!--      <mat-list-item class="parent">-->
+<!--        <span class="full-width" *ngIf="isExpanded || isShowing" (click)="logout()">Logout</span>-->
+<!--        <mat-icon mat-list-icon>exit_to_app</mat-icon>-->
+<!--      </mat-list-item>-->
+<!--    </mat-nav-list>-->
+
+<!--  </mat-sidenav>-->
+<!--</mat-sidenav-container>-->
+
+
